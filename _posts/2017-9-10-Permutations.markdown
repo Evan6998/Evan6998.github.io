@@ -10,7 +10,7 @@ tags:
     - Algorithms
 ---
 
-# Leetcode-46 Permutations
+# Permutations
 ## Question
 Given a collection of distinct numbers, return all possible permutations.
 
