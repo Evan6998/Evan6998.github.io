@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Leetcode-46 Permutations"
-subtitle:   "Blog for Leetcode"
+title:      "Permutations"
+subtitle:   "Leetcode-46"
 date:       2017-09-10 11:12:00
 author:     "Evan"
 header-img: "img/post-bg-2015.jpg"
