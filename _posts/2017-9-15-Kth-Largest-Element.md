@@ -21,6 +21,9 @@ Given `[3,2,1,5,6,4]` and k = 2, return 5.
 You may assume k is always valid, 1 ≤ k ≤ array's length.
 
 ## Answer
+### Answer0
+最直接的方法就是将数组排序然后直接索引第k个元素，时间复杂度位O(nlgn)。
+### Answer1
 `类型：归并排序`  
 这道题类似与快速排序的算法，为了能在O(n)的时间复杂度内完成，先使用`partition`来进行切分，能够返回一个数组中某个数的大小排位，同时该数左边的数比它小，右边的数比他大。因此通过这种递归可以找到第k大的数。
 ```py
