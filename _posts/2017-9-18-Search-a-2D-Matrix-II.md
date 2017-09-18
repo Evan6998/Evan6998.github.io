@@ -36,7 +36,7 @@ Given **target** = 20, return `false`.
 ## Answer
 刚开始我就简单地去遍历这个matrix并设置了一些限制条件，结果发现Runtime倒数了。排位为`2.24%`(倒数)  
 代码如下
-```PY
+```py
 class Solution(object):
     def searchMatrix(self, matrix, target):
         """
@@ -76,5 +76,26 @@ class Solution(object):
             if matrix[i] and matrix[i][0] > target: return False
             if matrix[i]:
                 if bs(matrix[i], target): return True
+        return False
+```
+最后看到讨论才发现其实我漏了`Integers in each column are sorted in ascending from top to bottom.`这个重要条件。  
+所以这道题应该从右上角开始搜索，如果右上角比target小，则行数增加，否则列数减少，以此类推。这个算法可以beats`82.31%`的submissions
+```py
+class Solution(object):
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+        if not matrix or not matrix[0]: return False
+        r, c = 0, len(matrix[0]) - 1
+        while r <= len(matrix) - 1 and c >= 0:
+            if matrix[r][c] == target:
+                return True
+            if matrix[r][c] < target:
+                r += 1
+            else:
+                c -= 1
         return False
 ```
