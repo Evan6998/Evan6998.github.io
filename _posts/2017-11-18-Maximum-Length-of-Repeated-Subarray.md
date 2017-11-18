@@ -52,7 +52,7 @@ class Solution(object):
 ```
 然后开始考虑动态规划。前一种算法的问题在于每个(i, j)内的公共子序列长度都得重新算，所以计算量较大。因此我们维护一个矩阵来保存(i, j)的公共子序列长度。  
 这个矩阵第i行第j列的数值代表到数组A的第i个元素和B的第j个元素为止时的最长公共子序列长度。
-```PY
+```py
 class Solution(object):
     def findLength(self, A, B):
         """
